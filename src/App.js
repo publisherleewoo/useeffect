@@ -1,10 +1,11 @@
 import React from "react";
-import Test10 from "./useEffect/Func/Test10";
+// import Test2 from "./useEffect/Test2";
+import Counter from "./render/Counter";
 
 function App() {
     return (
         <div className="App">
-            <Test10></Test10>
+            <Counter></Counter>
         </div>
     );
 }
