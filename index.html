@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        let orderList = [
+            { "upcheid": "000", "tid": "00000", "total": 1004 },
+            { "upcheid": "111", "tid": "11111", "total": 1000 },
+            { "upcheid": "111", "tid": "11111", "total": 2000 },
+            { "upcheid": "222", "tid": "11111", "total": 1000 },
+            { "upcheid": "000", "tid": "00000", "total": 1004 },
+            { "upcheid": "111", "tid": "11111", "total": 1000 },
+            { "upcheid": "222", "tid": "11111", "total": 1000 },
+        ]
+
+
+        function sameValueTotalSumOutput(Arr) {
+            return Object.values(Arr.reduce((aum, cur) => {
+                const key = cur.tid;
+                (key in aum) ? aum[key].total += cur.total : aum[key] = cur
+                return aum
+            }, {}))
+
+        }
+
+        const result = sameValueTotalSumOutput(orderList);
+        console.dir(result)
+
+
+        // var result = orderList.reduce((aum, cur) => {
+        //     aum.forEach((a) => {
+        //         if (a.upcheid === cur.upcheid) {
+        //             a.total += cur.total
+        //             return false
+        //         }
+        //     })
+
+        //     return aum.concat(cur)
+        // }, [])
+        // console.log(result)
+
+
+
+
+    </script>
+</body>
+
+</html>
